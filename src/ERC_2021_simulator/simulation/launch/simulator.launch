@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- gazebo limited -->
+  <include file="$(find ur_gazebo)/launch/ur3.launch">
+    <arg name="limited" default="true" />
+  </include>
+
+  <!-- moveit limited -->
+  <include file="$(find ur3_moveit_config)/launch/ur3_moveit_planning_execution.launch">
+    <arg name="sim" default="true" />
+    <arg name="limited" default="true" />
+  </include>
+
+  <!-- spawn aruco marker in gazebo and launch aruco_ros -->
+  <include file = "$(find simulation)/launch/aruco.launch.xml">
+    <arg name="node_name"    value="aruco_single_582"/> 
+    <arg name="markerId"     value="582"/> 
+    <arg name="markerSize"   value="0.045"/>  
+    <arg name="marker_frame" value="aruco_582"/>
+    <arg name="reference_frame"    value="/world"/>  
+  </include>
+
+  <!-- spawn panel -->
+  <include file = "$(find panel_description)/launch/gazebo.launch" />
+
+  <!-- rviz -->
+  <include file="$(find ur3_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" default="true" />
+  </include>
+
+</launch>

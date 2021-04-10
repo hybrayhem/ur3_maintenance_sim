@@ -1,0 +1,57 @@
+FROM osrf/ros:melodic-desktop-full
+
+#RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+
+RUN apt-get update && apt-get upgrade -y && \
+	apt-get install -y lsb-core g++ openssh-server gedit vim tmux
+
+RUN rm /etc/ros/rosdep/sources.list.d/20-default.list && rosdep init && rosdep update
+
+RUN apt-get update && apt-get install -y gdb gnupg2 apt-transport-https
+
+#create workspace
+RUN mkdir -p /catkin_ws/src
+
+#universal_robot
+RUN cd /catkin_ws/src && git clone https://github.com/Michal-Bidzinski/ERC_2021_simulator.git
+
+#gazebo plugins
+RUN cd /catkin_ws/src && git clone https://github.com/roboticsgroup/roboticsgroup_gazebo_plugins.git
+
+# Copy packages and build the workspace
+WORKDIR /catkin_ws
+COPY ../src ./src
+
+RUN apt install ros-melodic-industrial-core -y
+
+RUN rosdep update
+
+RUN rosdep install --from-paths /catkin_ws/src/ --ignore-src --rosdistro melodic -r -y
+
+#teleop
+RUN apt install ros-melodic-teleop* -y
+
+#joystick
+RUN apt install ros-melodic-joy* -y
+
+#aruco
+#RUN apt install ros-melodic-aruco-ros* -y
+
+#controller
+RUN apt install ros-melodic-ros-controllers* -y
+
+#pip2
+RUN apt install -y python-pip
+
+#pip3
+RUN apt install -y python3-pip
+
+
+RUN /bin/bash -c '. /opt/ros/melodic/setup.bash; cd /catkin_ws; catkin_make'
+
+RUN echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+RUN echo "source /catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+# Install start script
+COPY ./start.sh /
+CMD ["/start.sh"]

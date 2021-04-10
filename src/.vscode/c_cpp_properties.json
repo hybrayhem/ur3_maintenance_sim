@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/aruco_ros/aruco/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/aruco_ros/aruco_ros/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ros_control/combined_robot_hw/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ros_control/combined_robot_hw_tests/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ros_control/controller_interface/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ros_control/controller_manager/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ros_control/controller_manager_tests/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/fake_joint/fake_joint_driver/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ros_control/hardware_interface/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/jog_control/jog_controller/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/joint_driver/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ros_control/joint_limits_interface/include/**",
+        "/home/hybrayhem/ws_moveit/src/ros_control_boilerplate/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ros_control/transmission_interface/include/**",
+        "/home/hybrayhem/Yazilim/kavimler-gocu/ws_maintenance/src/ERC_2021_simulator/ur_kinematics/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

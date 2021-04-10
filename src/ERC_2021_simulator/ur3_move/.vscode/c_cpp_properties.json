@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/hybrayhem/catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/hybrayhem/catkin_ws/src/aruco_ros/aruco/include/**",
+        "/home/hybrayhem/catkin_ws/src/aruco_ros/aruco_ros/include/**",
+        "/home/hybrayhem/catkin_ws/src/ERC_2021_simulator/ur_kinematics/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
